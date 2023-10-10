@@ -185,7 +185,7 @@ header {
     .side-button {
       display: none;
     }
-    .menu {
+    .menu, .menu-open {
       margin-right: 30px;
       margin-left: 0px;
     }
