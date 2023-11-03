@@ -15,7 +15,7 @@ const Header = () => {
           <h1>Mukani</h1>
         </div>
         <Burger setIsOpen={setIsOpen} isOpen={isOpen} />
-        <NavBar isOpen={isOpen} />
+        <NavBar isOpen={isOpen} setIsOpen={setIsOpen}/>
         <SideButton />
       </div>
     </header>
