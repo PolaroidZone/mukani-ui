@@ -1,38 +1,38 @@
-{
-  "project-1": {
+[
+  {
     "Title": "Mukani Ui",
     "Details": "Mukani front end",
     "Status": "development",
     "ThumbPath": ""
   },
-  "project-2": {
-    "Title": "Mukani backeng",
+  {
+    "Title": "Mukani backend",
     "Details": "Mukani node server",
     "Status": "complete",
     "ThumbPath": ""
   },
-  "project-3": {
+  {
     "Title": "Morula",
     "Details": "Simple chat app",
     "Status": "development",
     "ThumbPath": ""
   },
-  "project-4": {
+  {
     "Title": "Catersimpor",
     "Details": "Catering app",
     "Status": "development",
     "ThumbPath": ""
   },
-  "project-5": {
+  {
     "Title": "HiveArt",
     "Details": "Art app project",
     "Status": "",
     "ThumbPath": ""
   },
-  "project-6": {
+  {
     "Title": "Hello world",
     "Details": "Best hello world",
     "Status": "complete",
     "ThumbPath": ""
   }
-}
+]
