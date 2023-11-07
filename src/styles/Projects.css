@@ -1,0 +1,294 @@
+.project-tabs {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-heading-container {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  width: 100%;
+  justify-content: center;
+  display: flex;
+}
+
+.projets-hero-heading {
+  background-image: linear-gradient(90deg, #f00, rgb(255, 0, 200));
+  margin-right: 10px;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-size: 100%;
+  -webkit-text-fill-color: transparent;
+}
+
+.project-heading-container h1 {
+  font-size: 72px;
+}
+
+.tabs {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 100px;
+}
+
+.tab-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #1f1f1f;
+  height: 35px;
+  width: 340px;
+  border-radius: 50px;
+  padding: 5px;
+}
+
+.tab-buttons button {
+  border: none;
+  border-radius: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
+  height: 30px;
+  cursor: pointer;
+  font-weight: bolder;
+  background-color: #1f1f1f;
+  color: white;
+  transition: 0.5s;
+}
+
+.tab-buttons button.active {
+  border: none;
+  height: 100%;
+  border-radius: 50px;
+  padding-left: 20px;
+  padding-right: 20px;
+  cursor: pointer;
+  font-weight: bolder;
+  background-color: #ffffff;
+  color: #1f1f1f;
+  transition: 0.5s;
+}
+
+.tab-buttons button:hover {
+  background-color: #868686;
+  color: #ffffff;
+  transition: 0.5s;
+}
+
+.tabcontent {
+  padding-bottom: 100px;
+  display: none;
+  grid-auto-columns: 1fr;
+  grid-column-gap: 20px;
+  grid-row-gap: 10px;
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: auto auto auto;
+  grid-template-rows: auto auto auto;
+}
+
+.my-project {
+  float: left;
+  display: block;
+  max-width: 495px;
+  width: 100%;
+  margin-bottom: 60px;
+  padding: 32px;
+  background-color: #1f1f1f;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  transition: 0.5s;
+  border-radius: 20px;
+}
+
+.my-project:hover {
+  transform: translateY(-20px);
+  transition: 0.5s;
+}
+
+.my-project-img {
+  width: 100%;
+  height: 350px;
+}
+
+.my-project-img img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.my-project-name,
+.my-project-details,
+.my-project-status,
+.my-project-go {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.my-project-name h1 {
+  font-size: 32px;
+  color: rgb(255, 255, 255);
+}
+
+.my-project-subt {
+  font-weight: 400;
+}
+
+.my-go-button {
+  display: flex;
+}
+
+.my-go-button a {
+  color: white;
+  height: 27px;
+  width: 32px;
+  text-align: center;
+  padding-top: 5px;
+  border-radius: 50px;
+  margin-left: 10px;
+  background: linear-gradient(
+    90deg,
+    #bd10c3,
+    #cd1590 28%,
+    #d2177e 56%,
+    hsl(0, 67%, 80%)
+  );
+}
+
+.my-go-button h1 {
+  color: #a5a5a5;
+  font-size: 18px;
+  margin-top: 5px;
+  font-weight: 400;
+}
+
+@media screen and (max-width: 1168px) {
+  .tabcontent {
+    padding-bottom: 100px;
+    display: none;
+    grid-auto-columns: 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 10px;
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    -ms-grid-rows: auto auto auto;
+    grid-template-rows: auto auto auto;
+  }
+
+  .my-project {
+    float: left;
+    display: block;
+    max-width: 430px;
+    width: 100%;
+    margin-bottom: 60px;
+    padding: 32px;
+    background-color: #1f1f1f;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    transition: 0.5s;
+  }
+
+  @media screen and (max-width: 1044px) {
+    .my-project {
+      max-width: 400px;
+    }
+
+    .my-project-img {
+      height: 300px;
+    }
+
+    .my-project-img img {
+      height: 300px;
+    }
+
+    @media screen and (max-width: 982px) {
+      .my-project {
+        max-width: 350px;
+        padding: 20px;
+      }
+
+      .my-project-img {
+        height: 250px;
+      }
+
+      .my-project-img img {
+        height: 250px;
+      }
+      @media screen and (max-width: 850px) {
+        .project-heading-container h1 {
+          font-size: 40px;
+        }
+        .tabcontent {
+          grid-column-gap: 0px;
+          grid-row-gap: 0px;
+          grid-row-gap: 0px;
+          -ms-grid-columns: 1fr;
+          grid-template-columns: 1fr;
+        }
+        .project-tabs {
+          width: 100%;
+        }
+        .tabs {
+          padding-bottom: 20px;
+        }
+
+        .tab-buttons {
+          width: 250px;
+        }
+
+        .tab-buttons button {
+          font-size: 10px;
+        }
+
+        .my-project {
+          max-width: 350px;
+        }
+
+        .my-project-img {
+          height: 250px;
+        }
+
+        .my-project-img img {
+          height: 250px;
+        }
+        @media screen and (max-width: 560px) {
+          .my-project {
+            padding: 10px;
+            max-width: 340px;
+            min-width: 340px;
+          }
+
+          .my-project-img {
+            height: 250px;
+          }
+
+          .my-project-img img {
+            height: 250px;
+          }
+
+          @media screen and (max-width: 404px) {
+            .my-project {
+              min-width: 260px;
+              max-width: 260px;
+            }
+
+            .my-project-img {
+              height: 200px;
+            }
+
+            .my-project-img img {
+              height: 200px;
+            }
+            .project-heading-container {
+              flex-direction: column;
+            }
+          }
+        }
+      }
+    }
+  }
+}
