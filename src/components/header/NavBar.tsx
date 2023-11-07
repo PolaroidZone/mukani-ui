@@ -1,25 +1,42 @@
 interface NavBarProps {
   isOpen: boolean;
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const NavBar = ({ isOpen }: NavBarProps) => {
+const NavBar = ({ isOpen, setIsOpen }: NavBarProps) => {
+  const handleOnNavClick = () => {
+    if (isOpen) {
+      setIsOpen(false);
+    }
+  };
+
   return (
     <div className={isOpen ? "nav-open" : "nav-link"}>
       <ul className="links">
         <li>
-          <a href="/">Home</a>
+          <a href="/" onClick={handleOnNavClick}>
+            Home
+          </a>
         </li>
         <li>
-          <a href="/#about">About</a>
+          <a href="/#about" onClick={handleOnNavClick}>
+            About
+          </a>
         </li>
         <li>
-          <a href="/#skills">Skills</a>
+          <a href="/#skills" onClick={handleOnNavClick}>
+            Skills
+          </a>
         </li>
         <li>
-          <a href="/#projects">Projects</a>
+          <a href="/#projects" onClick={handleOnNavClick}>
+            Projects
+          </a>
         </li>
         <li>
-          <a href="/#blog">Blog</a>
+          <a href="/#blog" onClick={handleOnNavClick}>
+            Blog
+          </a>
         </li>
       </ul>
     </div>

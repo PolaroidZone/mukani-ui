@@ -141,7 +141,7 @@ header {
   }
 
   .nav-link, .nav-open {
-    margin-top: 60px;
+    margin-top: 5vh;
     padding-top: 40px;
     position: absolute;
     background: rgba(0, 0, 0, 0.466);
@@ -149,7 +149,7 @@ header {
     width: 100%;
     justify-content: center;
     z-index: 1;
-    height: 100vh;
+    height: 90vh;
     transition: ease-in-out 0.3s;
     transform: translateX(-200%);
     border-bottom-left-radius: 30px;
@@ -185,7 +185,7 @@ header {
     .side-button {
       display: none;
     }
-    .menu {
+    .menu, .menu-open {
       margin-right: 30px;
       margin-left: 0px;
     }

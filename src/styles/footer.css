@@ -131,6 +131,10 @@
         font-size: 20px;
       }
 
+      #heading-4 {
+        font-size: 20px;
+      }
+
       .footer-contact-strip {
         width: 100%;
         align-items: center;
@@ -138,6 +142,7 @@
       }
 
       @media screen and (max-width: 365px) {
+        #heading-4 {font-size: 18px;}
         .footer-pages-links {
           margin-right: 20px;
         }
