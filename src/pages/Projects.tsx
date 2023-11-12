@@ -22,6 +22,19 @@ const Projects = () => {
     projectTabs(activeTab);
   };
 
+  const activeButtonStyles = {
+    border: "none",
+    height: "100%",
+    borderRadius: "50px",
+    paddingLeft: "20px",
+    paddingRight: "20px",
+    cursor: "pointer",
+    fontWeight: "bolder",
+    backgroundColor: "#ffffff",
+    color: "#1f1f1f",
+    transition: "0.5s",
+  };
+
   return (
     <section className="container">
       <div className="projects-hero-container">
@@ -36,13 +49,16 @@ const Projects = () => {
             <div className="tab-buttons">
               <button
                 className={`tablinks ${
-                  activeTab === "AllProjects" ? "active" : ""
+                  activeTab === "AllProjects" ? "active" : "active"
                 }`}
                 onClick={() => {
                   handleTabClick("AllProjects");
                   projectTabs("AllProjects");
                 }}
                 id="defaultOpen"
+                style={
+                  activeTab === "AllProjects" ? activeButtonStyles : undefined
+                }
               >
                 All Projects
               </button>
@@ -54,6 +70,9 @@ const Projects = () => {
                   handleTabClick("Complete");
                   projectTabs("Complete");
                 }}
+                style={
+                  activeTab === "Complete" ? activeButtonStyles : undefined
+                }
               >
                 Complete
               </button>
@@ -65,6 +84,9 @@ const Projects = () => {
                   handleTabClick("Development");
                   projectTabs("Development");
                 }}
+                style={
+                  activeTab === "Development" ? activeButtonStyles : undefined
+                }
               >
                 Development
               </button>
