@@ -5,22 +5,13 @@ const Projects = () => {
   const [activeTab, setActiveTab] = useState("AllProjects"); // Initialize the active tab
 
   useEffect(() => {
-    counter();
-  });
+    projectTabs(activeTab);
+  }, [activeTab]);
 
   const handleTabClick = (tabName: SetStateAction<string>) => {
     setActiveTab(tabName); // Set the active tab when a button is clicked
   };
 
-  const defaultTab = () => {
-    projectTabs("AllProjects");
-  };
-
-  defaultTab();
-
-  const counter = () => {
-    projectTabs(activeTab);
-  };
 
   const activeButtonStyles = {
     border: "none",
