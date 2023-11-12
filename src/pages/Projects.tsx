@@ -1,8 +1,12 @@
-import { SetStateAction, useState } from "react";
+import { SetStateAction, useState, useEffect } from "react";
 
 import "../styles/Projects.css";
 const Projects = () => {
   const [activeTab, setActiveTab] = useState("AllProjects"); // Initialize the active tab
+
+  useEffect(() => {
+    counter();
+  });
 
   const handleTabClick = (tabName: SetStateAction<string>) => {
     setActiveTab(tabName); // Set the active tab when a button is clicked
@@ -13,6 +17,10 @@ const Projects = () => {
   };
 
   defaultTab();
+
+  const counter = () => {
+    projectTabs(activeTab);
+  };
 
   return (
     <section className="container">
