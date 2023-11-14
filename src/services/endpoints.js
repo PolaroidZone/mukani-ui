@@ -6,3 +6,5 @@ const getHomeData = async () => {
   });
   return response.data;
 };
+
+export { getHomeData };
