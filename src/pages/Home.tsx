@@ -12,10 +12,16 @@ import { getHomeData } from "../services/endpoints";
 const Home = () => {
   const [isloading, setisloading] = useState("true");
 
+  const [projects, setProjects] = useState({});
+  const [articlesDAta, setArticlesDAta] = useState({});
+
   useEffect(() => {
     getHomeData()
       .then((res) => {
         console.log(res);
+        const { projects, articlesDAta } = res.data;
+        setProjects(projects);
+        setArticlesDAta(articlesDAta);
         setisloading("false");
       })
       .catch((err) => {
@@ -28,7 +34,7 @@ const Home = () => {
       <Hero />
       <About />
       <Skills />
-      <ProjectsSection />
+      <ProjectsSection project={[]} />
       <BlogSection />
       <ContactSection />
     </>
