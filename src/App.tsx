@@ -7,6 +7,7 @@ import Articles from "./pages/Article";
 import Projects from "./pages/Projects";
 
 import "./styles/App.css";
+import Contact from "./pages/Contact";
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/>}></Route>
         <Route path="/projects" element={<Projects/>}></Route>
-        <Route path="/article" element={<Articles/>}></Route>
+        <Route path="/articles" element={<Articles/>}></Route>
+        <Route path="/contact" element={<Contact/>}></Route>
       </Routes>
       <Footer/>
     </div>

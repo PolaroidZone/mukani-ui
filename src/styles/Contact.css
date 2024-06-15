@@ -1,0 +1,295 @@
+.contact-me-container {
+  padding-top: 150px;
+  padding-bottom: 100px;
+  margin-bottom: 100px;
+  display: flex;
+  width: 100%;
+  max-width: 1800px;
+  justify-content: center;
+}
+
+.contact-me-title {
+  width: 100%;
+}
+
+.contact-me-title h1 {
+  font-size: 54px;
+}
+.color-grad-contactT {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 100%;
+  background-image: linear-gradient(
+    90deg,
+    #bd10c3,
+    #cd1590 28%,
+    #d2177e 56%,
+    hsl(0, 67%, 80%)
+  );
+}
+
+.contact-me-par {
+  padding-top: 20px;
+  margin-bottom: 30px;
+}
+
+.contact-me-par p {
+  margin-bottom: 0px;
+  max-width: 400px;
+  color: #b3b3b3;
+  font-size: 18px;
+  line-height: 32px;
+}
+
+.contact-me-contactInfo {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.contact-contact-icon {
+  font-size: 25px;
+  margin-right: 20px;
+}
+
+.contact-me-left {
+  margin-right: 50px;
+}
+.contact-me-right {
+  margin-left: 50px;
+  background-color: #1f1f1f;
+  display: flex;
+  justify-content: center;
+  width: 500px;
+  padding-bottom: 30px;
+}
+
+form {
+  padding-top: 20px;
+  width: 450px;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-form-top {
+  padding-top: 10px;
+  margin-bottom: 20px;
+}
+
+.contact-field-name,
+.contact-field-email,
+.contact-field-message {
+  margin-bottom: 20px;
+}
+
+.field-container {
+  display: flex;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #171717;
+  width: 400px;
+  padding-left: 20px;
+}
+
+.field-container input,
+.field-container textarea {
+  width: 335px;
+  margin-left: 20px;
+  background: #171717;
+  border: none;
+  resize: none;
+  color: #b3b3b3;
+  font-size: 16px;
+}
+
+.contact-field-submit {
+  width: 100%;
+}
+
+.form-submit-btn {
+  width: 100%;
+  height: 70px;
+  border-radius: 50px;
+  background-image: linear-gradient(
+    90deg,
+    #bd10c3,
+    #cd1590 28%,
+    #d2177e 56%,
+    hsl(0, 67%, 80%)
+  );
+}
+
+.form-submit-btn button {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  background: none;
+  padding-left: 10px;
+  padding-right: 5px;
+  border: none;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.submit-icon {
+  width: 60px;
+  height: 60px;
+  background-color: white;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  color: #d2177e;
+}
+
+.submit-label {
+  text-align: center;
+  width: 70%;
+}
+
+.submit-label label {
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+  color: white;
+}
+.submit-icon-con {
+  display: flex;
+  width: 30%;
+  justify-content: flex-end;
+}
+
+@media screen and (max-width: 1130px) {
+  .contact-me-container {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+  .contact-me-left {
+    margin-right: 0px;
+    width: 80%;
+  }
+  .contact-me-right {
+    margin-left: 0px;
+    margin-top: 50px;
+    justify-content: center;
+    width: 600px;
+  }
+
+  .field-container {
+    width: 500px;
+  }
+
+  form {
+    width: 550px;
+  }
+
+  .field-container input,
+  .field-container textarea {
+    width: 435px;
+  }
+
+  @media screen and (max-width: 640px) {
+    .contact-me-right {
+      margin-left: 0px;
+      margin-top: 50px;
+      justify-content: center;
+      width: 450px;
+    }
+
+    .field-container {
+      width: 350px;
+    }
+
+    form {
+      width: 400px;
+    }
+
+    .field-container input,
+    .field-container textarea {
+      width: 335px;
+    }
+
+    .contact-me-title h1 {
+      font-size: 40px;
+    }
+    .contact-heading-4 {
+      font-size: 20px;
+    }
+
+    .contact-me-container {
+      padding-top: 100px;
+    }
+
+    @media screen and (max-width: 490px) {
+      .contact-me-right {
+        margin-left: 0px;
+        margin-top: 50px;
+        justify-content: center;
+        width: 350px;
+      }
+
+      .field-container {
+        width: 280px;
+      }
+
+      form {
+        width: 350px;
+      }
+
+      .field-container input,
+      .field-container textarea {
+        width: 235px;
+      }
+      .contact-heading-4 {
+        font-size: 16px;
+      }
+
+      .contact-me-title h1 {
+        font-size: 25px;
+      }
+      .contact-heading-4 {
+        font-size: 16px;
+      }
+
+      .contact-me-par p {
+        font-size: 15px;
+      }
+
+      .field-container {
+        padding-left: 0px;
+      }
+
+      @media screen and (max-width: 378px) {
+        .contact-me-right {
+          width: 100%;
+        }
+
+        .field-container {
+          width: 260px;
+          justify-content: center;
+        }
+
+        form {
+          width: 350px;
+        }
+
+        .field-container input,
+        .field-container textarea {
+          width: 200px;
+        }
+        .contact-heading-4 {
+          font-size: 16px;
+        }
+        .contact-me-container {
+          margin-bottom: 0px;
+        }
+        .contact-me-contactInfo {
+          flex-direction: column;
+        }
+      }
+    }
+  }
+}

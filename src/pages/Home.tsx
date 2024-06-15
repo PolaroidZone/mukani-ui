@@ -8,8 +8,6 @@ import BlogSection from "../components/blog/BlogSection";
 import ProjectsSection from "../components/projects/ProjectsSection";
 
 const Home = () => {
-  const [isloading, setisloading] = useState("true");
-
   return (
     <>
       <Hero />
