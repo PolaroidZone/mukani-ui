@@ -21,12 +21,12 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
         <div className="projects-row">
           <ProjectsHeader />
           {projects.map((project) => (
-            <Project key={project.id} {...project} />
+            <Project thumbPath={""} title={""} details={""} status={""} key={project.id} {...project} />
           ))}
         </div>
         <div className="projects-row2">
           {projects.map((project) => (
-            <Project key={project.id} {...project} />
+            <Project thumbPath={""} title={""} details={""} status={""} key={project.id} {...project} />
           ))}
           <ProjectsNav />
         </div>
