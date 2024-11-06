@@ -14,7 +14,7 @@ header {
 .logo {
   display: flex;
   margin-left: 50px;
-  font-size: 25px;
+  font-size: 19px;
 }
 
 .links {
@@ -141,7 +141,7 @@ header {
   }
 
   .nav-link, .nav-open {
-    margin-top: 5vh;
+    margin-top: 60px;
     padding-top: 40px;
     position: absolute;
     background: rgba(0, 0, 0, 0.466);

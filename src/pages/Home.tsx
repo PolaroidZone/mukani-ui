@@ -30,7 +30,7 @@ const Home = () => {
       console.log(err);
     }
   };
-
+    
   return (
     <>
       <Hero />
