@@ -1,4 +1,4 @@
-import api from "./api";
+import {api} from "./api";
 
 const getHomeData = async () => {
   const response = await api.get("/", {
