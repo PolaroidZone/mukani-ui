@@ -1,8 +1,18 @@
-{
-  "article-1": {
-    "Title": "The greate programmer, an overview",
-    "Category": "Programing",
-    "Message": "",
-    "Timestamp": ""
+[
+  {
+    "article-1": {
+      "Title": "The greate programmer, an overview",
+      "Category": "Programing",
+      "Message": "",
+      "Timestamp": ""
+    }
+  },
+  {
+    "article-2": {
+      "Title": "How to be a greate programmer",
+      "Category": "Programing",
+      "Message": "",
+      "Timestamp": ""
+    }
   }
-}
+]

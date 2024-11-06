@@ -1,18 +1,30 @@
-import { SetStateAction, useState } from "react";
+import { SetStateAction, useState, useEffect } from "react";
 
 import "../styles/Projects.css";
 const Projects = () => {
   const [activeTab, setActiveTab] = useState("AllProjects"); // Initialize the active tab
 
+  useEffect(() => {
+    projectTabs(activeTab);
+  }, [activeTab]);
+
   const handleTabClick = (tabName: SetStateAction<string>) => {
     setActiveTab(tabName); // Set the active tab when a button is clicked
   };
 
-  const defaultTab = () => {
-    projectTabs("AllProjects");
-  };
 
-  defaultTab();
+  const activeButtonStyles = {
+    border: "none",
+    height: "100%",
+    borderRadius: "50px",
+    paddingLeft: "20px",
+    paddingRight: "20px",
+    cursor: "pointer",
+    fontWeight: "bolder",
+    backgroundColor: "#ffffff",
+    color: "#1f1f1f",
+    transition: "0.5s",
+  };
 
   return (
     <section className="container">
@@ -28,13 +40,16 @@ const Projects = () => {
             <div className="tab-buttons">
               <button
                 className={`tablinks ${
-                  activeTab === "AllProjects" ? "active" : ""
+                  activeTab === "AllProjects" ? "active" : "active"
                 }`}
                 onClick={() => {
                   handleTabClick("AllProjects");
                   projectTabs("AllProjects");
                 }}
                 id="defaultOpen"
+                style={
+                  activeTab === "AllProjects" ? activeButtonStyles : undefined
+                }
               >
                 All Projects
               </button>
@@ -46,6 +61,9 @@ const Projects = () => {
                   handleTabClick("Complete");
                   projectTabs("Complete");
                 }}
+                style={
+                  activeTab === "Complete" ? activeButtonStyles : undefined
+                }
               >
                 Complete
               </button>
@@ -57,6 +75,9 @@ const Projects = () => {
                   handleTabClick("Development");
                   projectTabs("Development");
                 }}
+                style={
+                  activeTab === "Development" ? activeButtonStyles : undefined
+                }
               >
                 Development
               </button>
