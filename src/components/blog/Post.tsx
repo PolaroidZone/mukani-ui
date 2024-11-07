@@ -3,7 +3,8 @@ const BigPost = () => {
     <div className="main-post">
       <div className="blog-img">
         <a href="articles/<%= article.id %>">
-          <img src="<%= article.thumbPath %>" alt="" />
+          <img src="" alt="" />
+          {/* <%= article.thumbPath %> */}
         </a>
       </div>
       <div className="main-post-details">

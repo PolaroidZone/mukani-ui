@@ -3,7 +3,8 @@ const SubPost = () => {
     <div className="recent-posts">
       <div className="recent-post">
         <div className="recent-blog-img">
-          <img src="<%= article.thumbPath %>" alt="" />
+          <img src="" alt="" />
+          {/* <%= article.thumbPath %> */}
         </div>
         <div className="recent-post-details">
           <div className="recent-blog-category">
