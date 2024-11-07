@@ -28,4 +28,4 @@ const getArticles = async () => {
   return response;
 };
 
-export { getProjects };
+export { getProjects, getDevProjects, getComProjects, getArticles };

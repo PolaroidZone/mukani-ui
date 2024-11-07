@@ -11,6 +11,7 @@ interface ProjectTy {
   title: string;
   details: string;
   status: string;
+  github: string;
   // Add other properties as needed
 }
 
