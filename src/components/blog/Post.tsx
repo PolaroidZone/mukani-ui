@@ -1,22 +1,31 @@
-const BigPost = () => {
+interface articleType {
+  category: string;
+  thumbPath: string;
+  message: string;
+  title: string;
+  timestamp: string;
+  id: string;
+}
+
+const BigPost = (articleType: articleType) => {
   return (
     <div className="main-post">
       <div className="blog-img">
-        <a href="articles/<%= article.id %>">
-          <img src="" alt="" />
+        <a href={`articles/${articleType.id}`}>
+          <img src={articleType.thumbPath} alt="" />
           {/* <%= article.thumbPath %> */}
         </a>
       </div>
       <div className="main-post-details">
         <div className="blog-category">
           <ul>
-            <li>Category holder</li>
-            <li>Timestamp holder</li>
+            <li>{articleType.category}</li>
+            <li>{articleType.timestamp}</li>
           </ul>
         </div>
         <div className="blog-title">
-          <a href="articles/<%= article.id %>">
-            <h1 className="heading-4">Title holder</h1>
+          <a href={`articles/${articleType.id}`}>
+            <h1 className="heading-4">{articleType.title}</h1>
           </a>
         </div>
       </div>
