@@ -1,5 +1,11 @@
 import { api } from "./api";
 
+interface emailBody {
+  name: string;
+  email: string;
+  message: string;
+}
+
 const getProjects = async () => {
   const response = await api.get("projects", {
     responseType: "json",
@@ -28,4 +34,15 @@ const getArticles = async () => {
   return response;
 };
 
-export { getProjects, getDevProjects, getComProjects, getArticles };
+const sendEmail = async (body: emailBody) => {
+  try {
+    const response = await api.post("contact", body, {
+      responseType: "json",
+    });
+    return response.status;
+  } catch (error) {
+    throw error; // Optionally re-throw or handle the error as needed
+  }
+};
+
+export { getProjects, getDevProjects, getComProjects, getArticles, sendEmail };

@@ -1,8 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
+import { sendEmail } from "../services/endpoints";
 
 import "../styles/Contact.css";
 
 export default function Contact() {
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+  const [message, setMessage] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [isSent, setIsSent] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsLoading(true);
+
+    if (isLoading) return;
+
+    try {
+      const body = { name, email, message };
+      const response = await sendEmail(body);
+      if (response === 200) {
+        setIsSent(true);
+        setEmail("");
+        setName("");
+        setMessage("");
+      }
+    } catch (error) {
+      throw error;
+    }
+    setIsLoading(false);
+  };
+
   return (
     <section className="container">
       <div className="contact-me-container">
@@ -61,6 +89,8 @@ export default function Contact() {
                     name="name"
                     id="name"
                     placeholder="First Name"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
                   />
                 </div>
               </div>
@@ -72,6 +102,8 @@ export default function Contact() {
                     name="email"
                     id="email"
                     placeholder="Enter your email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
               </div>
@@ -84,12 +116,19 @@ export default function Contact() {
                     id="message"
                     cols={30}
                     rows={10}
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
                   ></textarea>
                 </div>
               </div>
+              {isSent && (
+                <h1 style={{ fontSize: 20, marginBottom: 15 }}>
+                  Message sent successfully{" ❤ "}
+                </h1>
+              )}
               <div className="contact-field-submit">
                 <div className="form-submit-btn">
-                  <button type="submit">
+                  <button type="submit" onClick={handleSubmit}>
                     <div className="submit-label">
                       <label>Submit Message</label>
                     </div>
