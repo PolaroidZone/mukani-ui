@@ -13,7 +13,6 @@ const BigPost = (articleType: articleType) => {
       <div className="blog-img">
         <a href={`articles/${articleType.id}`}>
           <img src={articleType.thumbPath} alt="" />
-          {/* <%= article.thumbPath %> */}
         </a>
       </div>
       <div className="main-post-details">

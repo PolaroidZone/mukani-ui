@@ -34,6 +34,20 @@ const getArticles = async () => {
   return response;
 };
 
+const getArticleById = async (id: string | undefined) => {
+  const response = await api.get(`articles/${id}`, {
+    responseType: "json",
+  });
+
+  return response;
+};
+
+const getNextArticle = async (id: string | undefined) => {
+  const response = await api.get(`articles/${id}`, {
+    responseType: "json",
+  });
+};
+
 const sendEmail = async (body: emailBody) => {
   try {
     const response = await api.post("contact", body, {
@@ -45,4 +59,11 @@ const sendEmail = async (body: emailBody) => {
   }
 };
 
-export { getProjects, getDevProjects, getComProjects, getArticles, sendEmail };
+export {
+  getProjects,
+  getDevProjects,
+  getComProjects,
+  getArticles,
+  sendEmail,
+  getArticleById,
+};
