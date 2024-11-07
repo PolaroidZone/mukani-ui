@@ -18,6 +18,8 @@ const ProjectsSection = () => {
   const [isloading, setisloading] = useState(true);
   const [projects, setProjects] = useState<ProjectTy[]>([]);
 
+  const rightProjects = projects.slice(2);
+
   const fetchData = async () => {
     try {
       const res = await getProjects();
@@ -49,19 +51,22 @@ const ProjectsSection = () => {
               status={project.status}
             />
           ))}
+          {rightProjects.length === 0 && <ProjectsNav />}
         </div>
-        <div className="projects-row2">
-          {projects.slice(2).map((project, index) => (
-            <Project
-              key={index}
-              thumbPath={project.thumbPath}
-              title={project.title}
-              details={project.details}
-              status={project.status}
-            />
-          ))}
-          <ProjectsNav />
-        </div>
+        {rightProjects.length !== 0 && (
+          <div className="projects-row2">
+            {rightProjects.map((project, index) => (
+              <Project
+                key={index}
+                thumbPath={project.thumbPath}
+                title={project.title}
+                details={project.details}
+                status={project.status}
+              />
+            ))}
+            <ProjectsNav />
+          </div>
+        )}
       </div>
     </section>
   );
