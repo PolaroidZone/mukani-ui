@@ -7,6 +7,6 @@ export const api = axios.create({
   baseURL,
   timeout: 10000,
   headers: {
-    "x-api-key": apiKey, // Adjust the header key if your API expects a different key name
+    "x-api-key": apiKey,
   },
 });

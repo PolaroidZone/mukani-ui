@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import Markdown from "react-markdown";
 import "../styles/Articles.css";
 
-import { getArticleById } from "../services/endpoints";
+import { getNextArticle, getArticleById } from "../services/endpoints";
 
 interface Article {
   thumbPath: string;
@@ -17,25 +17,51 @@ interface Article {
   id: string;
 }
 
+interface NextArticle {
+  id: string;
+}
+
 const Articles = () => {
   const [article, setArticle] = useState<Article | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [isnextArticle, setIsNextArticle] = useState(false);
+  const [nextID, setNextID] = useState<NextArticle | null>(null);
 
   const { id } = useParams();
 
   const fetchArticles = async () => {
     try {
       const response = await getArticleById(id);
+
+      if (response === 404) {
+        setIsNextArticle(false);
+        return;
+      }
+
       const { article } = response.data;
       setArticle(article);
       setIsLoading(false);
     } catch (error) {
-      console.error("Error fetching articles:", error);
+      throw error;
     }
   };
 
-  const getNextArticle = async () => {};
+  const nextArticle = async () => {
+    try {
+      const response = await getNextArticle(id);
+
+      if (response === 404) {
+        setIsNextArticle(false);
+        return;
+      }
+
+      const { nextArticle } = response.data;
+      setNextID(nextArticle);
+      setIsNextArticle(true);
+    } catch (error) {
+      throw error;
+    }
+  };
 
   useEffect(() => {
     if (isLoading) {
@@ -45,6 +71,7 @@ const Articles = () => {
 
   useEffect(() => {
     if (article) {
+      nextArticle();
     }
   }, [article]);
 
@@ -100,12 +127,12 @@ const Articles = () => {
             </div>
             <div className="article-navigator">
               <div className="post-navigator">
-                {isnextArticle ? (
+                {!isnextArticle ? (
                   <div className="post-nav-label">
                     <h1>All Caught Up</h1>
                   </div>
                 ) : (
-                  <a href="">
+                  <a href={`/articles/${nextID}`}>
                     <div className="post-nav-label">
                       <h1>Next Article</h1>
                     </div>
