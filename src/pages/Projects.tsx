@@ -1,17 +1,83 @@
 import { SetStateAction, useState, useEffect } from "react";
+import TabProject from "../components/projects/TabProject";
+import {
+  getDevProjects,
+  getComProjects,
+  getProjects,
+} from "../services/endpoints";
 
 import "../styles/Projects.css";
+
+interface ProjectTy {
+  // Define the structure of your project data
+  id: string;
+  thumbPath: string;
+  title: string;
+  details: string;
+  status: string;
+  github: string;
+  // Add other properties as needed
+}
+
 const Projects = () => {
   const [activeTab, setActiveTab] = useState("AllProjects"); // Initialize the active tab
+  const [projects, setProjects] = useState<ProjectTy[]>([]); // Initialize the project data
+  const [isLoading, setIsLoading] = useState(true); // Initialize the loading state
+  const [devProjects, setDevProjects] = useState<ProjectTy[]>([]); // Initialize the development project data
+  const [comProjects, setComProjects] = useState<ProjectTy[]>([]); // Initialize the complete project data
+
+  //Filter projects using status 
+  const filterProjects = (projects: ProjectTy[], status: string) => {
+    return projects.filter((project) => project.status === status);
+  };
+
+  const fetchProjects = async () => {
+    try {
+      setIsLoading(true);
+      const response = await getProjects();
+      const { projects } = response.data;
+      setProjects(projects);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  // Fetch development projects
+  const fetchDevProjects = async () => {
+    try {
+      setIsLoading(true);
+      const response = await getDevProjects();
+      const { development } = response.data;
+      setDevProjects(development);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  // Fetch complete projects
+  const fetchComProjects = async () => {
+    try {
+      setIsLoading(true);
+      const response = await getComProjects();
+      const { complete } = response.data;
+      setComProjects(complete);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   useEffect(() => {
     projectTabs(activeTab);
-  }, [activeTab]);
-
+    if (isLoading) {
+      fetchProjects();
+      fetchDevProjects();
+      fetchComProjects();
+    }
+    setIsLoading(false);
+  }, [activeTab, isLoading]);
   const handleTabClick = (tabName: SetStateAction<string>) => {
     setActiveTab(tabName); // Set the active tab when a button is clicked
   };
-
 
   const activeButtonStyles = {
     border: "none",
@@ -83,38 +149,45 @@ const Projects = () => {
               </button>
             </div>
           </div>
-
-          {/* Tab content */}
-          {/* You can map over the project data to generate project elements */}
           <div id="AllProjects" className="tabcontent">
-            <div className="my-project">
-              <div className="my-project-img">
-                <img src="" alt="" />
-              </div>
-              <div className="my-project-details">
-                <div className="my-project-name">
-                  <h1>Hello world</h1>
-                </div>
-                <div className="my-project-detail">
-                  <h1 className="my-project-subt">Detail</h1>
-                  <p>Hello world project</p>
-                </div>
-                <div className="my-project-status">
-                  <h1 className="my-project-subt">Status</h1>
-                  <p>Development</p>
-                </div>
-                <div className="my-project-go">
-                  <div className="my-go-button">
-                    <h1>VIEW PROJECT</h1>
-                    <a href="/">
-                      <i className="fa fa-arrow-right"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
+            {projects.map((project, index) => (
+              <TabProject
+                key={index}
+                id={project.id}
+                thumbPath={project.thumbPath}
+                title={project.title}
+                details={project.details}
+                status={project.status}
+                github={project.github}
+              />
+            ))}
           </div>
-          {/* Repeat the same structure for "Complete" and "Development" tabs */}
+          <div id="Development" className="tabcontent">
+            {devProjects.map((project, index) => (
+              <TabProject
+                key={index}
+                id={project.id}
+                thumbPath={project.thumbPath}
+                title={project.title}
+                details={project.details}
+                status={project.status}
+                github={project.github}
+              />
+            ))}
+          </div>
+          <div id="Complete" className="tabcontent">
+            {comProjects.map((project, index) => (
+              <TabProject
+                key={index}
+                id={project.id}
+                thumbPath={project.thumbPath}
+                title={project.title}
+                details={project.details}
+                status={project.status}
+                github={project.github}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
