@@ -3,6 +3,7 @@ interface ProjectProps {
   title: string;
   details: string;
   status: string;
+  github: string;
 }
 
 const Project = (project: ProjectProps) => {
@@ -26,7 +27,9 @@ const Project = (project: ProjectProps) => {
         <div className="project-go">
           <div className="go-button">
             <h1>VIEW PROJECT</h1>
-            <i className="fa fa-arrow-right"></i>
+            <a href={project.github}>
+              <i className="fa fa-arrow-right"></i>
+            </a>
           </div>
         </div>
       </div>
