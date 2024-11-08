@@ -47,7 +47,7 @@ const getArticleById = async (id: string | undefined) => {
   } catch (error: any) {
     if (error.response.status === 404) {
       console.warn(`No next article found for ID: ${id}`);
-      return 404; // Return null or an appropriate response if no article is found
+      return 404;
     }
     throw error;
   }
@@ -62,23 +62,15 @@ const getNextArticle = async (id: string | undefined) => {
     const response = await api.get(`articles/${id}/next`, {
       responseType: "json",
     });
-    return response; // Return only the data part
+    return response;
   } catch (error: any) {
     if (error.response) {
-      // Handle specific status codes
       if (error.response.status === 404) {
         console.warn(`No next article found for ID: ${id}`);
-        return 404; // Return null or an appropriate response if no article is found
+        return 404;
       }
-      // Other status codes can be handled here as needed
-      console.error(
-        `Error fetching article: ${error.response.status} - ${error.response.statusText}`
-      );
-    } else {
-      // Handle errors that don't have a response (e.g., network errors)
-      console.error("Network or unexpected error:", error.message);
     }
-    throw error; // Re-throw the error if needed for further handling
+    throw error;
   }
 };
 

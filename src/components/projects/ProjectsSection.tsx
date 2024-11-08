@@ -5,14 +5,12 @@ import ProjectsNav from "./ProjectsNav";
 import { getProjects } from "../../services/endpoints";
 
 interface ProjectTy {
-  // Define the structure of your project data
   id: string;
   thumbPath: string;
   title: string;
   details: string;
   status: string;
   github: string;
-  // Add other properties as needed
 }
 
 const ProjectsSection = () => {
@@ -50,6 +48,7 @@ const ProjectsSection = () => {
               title={project.title}
               details={project.details}
               status={project.status}
+              github={project.github}
             />
           ))}
           {rightProjects.length === 0 && <ProjectsNav />}
@@ -63,6 +62,7 @@ const ProjectsSection = () => {
                 title={project.title}
                 details={project.details}
                 status={project.status}
+                github={project.github}
               />
             ))}
             <ProjectsNav />

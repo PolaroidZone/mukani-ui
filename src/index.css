@@ -822,6 +822,7 @@ body {
   padding-top: 5px;
   border-radius: 50px;
   margin-left: 10px;
+  transition: 0.5s;
   background: linear-gradient(
     90deg,
     #bd10c3,
@@ -829,6 +830,12 @@ body {
     #d2177e 56%,
     hsl(0, 67%, 80%)
   );
+}
+
+.go-button a:hover {
+  transform: rotate(-40deg);
+  transition: 0.5s;
+  color: #ffffff;
 }
 
 .go-button h1 {
@@ -1283,4 +1290,3 @@ body {
   align-items: center;
   justify-content: center;
 }
-
