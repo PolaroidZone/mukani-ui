@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import ProjectsHeader from "./ProjectsHeader";
 import Project from "./Project";
 import ProjectsNav from "./ProjectsNav";

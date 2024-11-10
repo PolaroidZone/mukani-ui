@@ -20,6 +20,7 @@ const SubPost = (articles: articlesType) => {
             />
           );
         }
+        return null;
       })}
     </div>
   );
