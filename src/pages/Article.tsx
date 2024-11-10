@@ -67,13 +67,13 @@ const Articles = () => {
     if (isLoading) {
       fetchArticles();
     }
-  }, [isLoading]);
+  });
 
   useEffect(() => {
     if (article) {
       nextArticle();
     }
-  }, [article]);
+  });
 
   return (
     <section className="container">

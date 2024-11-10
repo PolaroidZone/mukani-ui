@@ -8,5 +8,6 @@ export const api = axios.create({
   timeout: 10000,
   headers: {
     "x-api-key": apiKey,
+    "content-type": "application/json",
   },
 });

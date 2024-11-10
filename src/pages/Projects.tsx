@@ -26,11 +26,6 @@ const Projects = () => {
   const [devProjects, setDevProjects] = useState<ProjectTy[]>([]); // Initialize the development project data
   const [comProjects, setComProjects] = useState<ProjectTy[]>([]); // Initialize the complete project data
 
-  //Filter projects using status 
-  const filterProjects = (projects: ProjectTy[], status: string) => {
-    return projects.filter((project) => project.status === status);
-  };
-
   const fetchProjects = async () => {
     try {
       setIsLoading(true);
