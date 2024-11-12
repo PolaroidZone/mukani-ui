@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 
 import Header from "./components/header/Header";
 import Footer from "./components/footer/footer";
-import "./styles/App.css";
+
 import Contact from "./pages/Contact";
 
 const Home = lazy(() => import("./pages/Home"));
